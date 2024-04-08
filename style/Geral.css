@@ -11,7 +11,7 @@
 .barralateral{
     padding-top: 10px;
     height: 100vh;
-    width: 20%;
+    width: 25%;
     background-color: black;
 }
 .maurilo{
@@ -33,6 +33,9 @@
     align-items: center;
     font-weight:600;
     font-size: 15px;
+}
+.divnome div p{
+    margin: 0;
 }
 .dinheiro{
     width: 100%;
@@ -65,4 +68,52 @@
     align-items: center;
     padding-left: 15px;
     gap: 20px;
+}
+.menu p, .carteira p,.config p{
+    margin: 0;
+}
+main{
+    width: 95%;
+    background-color: #3E3E3E;
+    padding-left: 5%;
+}
+.barra{
+    width: 500px;
+    height: 40px;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+}
+.barraAmarela{
+    width: 300px;
+    height: 40px;
+    background-color: #DDBF29;
+    border-radius: 15px;
+}
+.titulo{
+    padding: 40px 0px;
+    font-weight: 600;
+    font-size: 40px;
+}
+.barraAndtexto p{
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.textoscard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards{
+    gap: 50px;
+    display: flex;
+    height: 250px;
+    justify-content: space-around;
+    align-items: center;
+}
+.card-geral{
+    width: 180px;
+    border-radius: 15px;
+    height: 100%;
+    background-color: #323232;
 }
