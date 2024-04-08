@@ -2,39 +2,67 @@
     margin: 0;
     padding: 0;
     color: white;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", sans-serif;
 }
 .total{
     display: flex;
     flex-direction: row;
 }
 .barralateral{
+    padding-top: 10px;
     height: 100vh;
-    width: 25%;
+    width: 20%;
     background-color: black;
 }
 .maurilo{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 1000px;
 }
 .divnome{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1px 20px;
+    padding: 1px 10px;
     align-items: center;
 }
 .divnome div{
     display: flex;
-    gap: 15px;
+    gap: 10px;
     flex-direction: row;
     align-items: center;
+    font-weight:600;
+    font-size: 15px;
 }
 .dinheiro{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 40px;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+.divperfil{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.divsino{
+    background-color: #DDBF29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 1000px;
+}
+.menu, .carteira,.config{
+    font-size: 25px;
+    height: 15%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    gap: 20px;
 }
