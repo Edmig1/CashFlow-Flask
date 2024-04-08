@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Quicksand", sans-serif;
+}
+
+.total {
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+}
+
+.barralateral {
+    padding-top: 10px;
+    height: 100vh;
+    width: 25%;
+    background-color: black;
+    color: white;
+}
+
+.maurilo {
+    width: 40px;
+    height: 40px;
+    border-radius: 1000px;
+}
+
+.divnome {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px 10px;
+    align-items: center;
+}
+
+.divnome div {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.dinheiro {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+
+.divperfil {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.divsino {
+    background-color: #DDBF29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 1000px;
+}
+
+.menu,
+.carteira,
+.config {
+    font-size: 25px;
+    height: 15%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    gap: 20px;
+}
+
+.menu p,
+.carteira p,
+.config p {
+    margin: 0px;
+}
+
+
+button {
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: black;
+    transition: all ease 0.1s;
+    box-shadow: 0px 5px 0px 0px black;
+}
+
+button:active {
+    transform: translateY(5px);
+    box-shadow: 0px 0px 0px 0px black;
+    border-radius: 15px;
+}
+
+
+input {
+    border-radius: 8px;
+    width: 35%;
+    border: 3px black solid;
+    background-color: white;
+    color: black;
+} 
+
+
+input::placeholder{
+    color: black;
+}
