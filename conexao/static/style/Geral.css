@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Quicksand", sans-serif;
+}
+.total{
+    display: flex;
+    flex-direction: row;
+}
+.barralateral{
+    padding-top: 10px;
+    height: 100vh;
+    width: 25%;
+    background-color: black;
+}
+.maurilo{
+    width: 40px;
+    height: 40px;
+    border-radius: 1000px;
+}
+.divnome{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1px 10px;
+    align-items: center;
+}
+.divnome div{
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+    align-items: center;
+    font-weight:600;
+    font-size: 15px;
+}
+.divnome div p{
+    margin: 0;
+}
+.dinheiro{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+.divperfil{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.divsino{
+    background-color: #DDBF29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 1000px;
+}
+.menu, .carteira,.config{
+    font-size: 25px;
+    height: 15%;
+    border-bottom: 1px solid white;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    gap: 20px;
+}
+.menu p, .carteira p,.config p{
+    margin: 0;
+}
+main{
+    width: 95%;
+    background-color: #3E3E3E;
+    padding-left: 5%;
+}
+.barra{
+    width: 500px;
+    height: 40px;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+}
+.barraAmarela{
+    width: 300px;
+    height: 40px;
+    background-color: #DDBF29;
+    border-radius: 15px;
+}
+.titulo{
+    padding: 40px 0px;
+    font-weight: 600;
+    font-size: 40px;
+}
+.barraAndtexto p{
+    padding-left: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+.textoscard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards{
+    gap: 50px;
+    display: flex;
+    height: 250px;
+    justify-content: space-around;
+    align-items: center;
+}
+.card-geral{
+    width: 180px;
+    border-radius: 15px;
+    height: 100%;
+    background-color: #323232;
+}
