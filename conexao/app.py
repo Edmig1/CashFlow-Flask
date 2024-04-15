@@ -80,14 +80,14 @@ def login_post():
             return redirect(url_for(next_route))
         return redirect(url_for('entrar'))
     else:
-        flash(f'Nome ou senha incorretos {email}  {senha} ', 'error')
+        flash(f'Nome ou senha incorretos', 'error')
         return redirect(url_for('login_form'))
 
 
-#@app.route('/logout', methods=['POST'])
-#def logout():
-#    session.pop('id', None)
-#    return redirect(url_for('index'))
+@app.route('/logout', methods=['POST'])
+def logout():
+    session.pop('id', None)
+    return redirect(url_for('login_form'))
 
 @app.route('/novo_user')
 def novo_user():

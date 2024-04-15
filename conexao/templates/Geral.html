@@ -20,7 +20,11 @@
                 <p>Carlos Carvalho Martins</p>
                 </div>
                 <div class="divsino">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <form action="{{ url_for('logout') }}" method="post">
+                        <button type="submit">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
             <div class="dinheiro">
