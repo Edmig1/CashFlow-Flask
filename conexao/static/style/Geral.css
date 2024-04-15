@@ -119,3 +119,9 @@ main{
     height: 100%;
     background-color: #323232;
 }
+.btnlogout{
+    border:none;
+    border-radius:1000px;
+    padding:10px;
+    background-color: transparent;
+}

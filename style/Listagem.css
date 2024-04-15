@@ -99,3 +99,9 @@ hr{
     margin: 0 !important;
     padding: 0 !important;
 }
+.btnlogout{
+    border:none;
+    border-radius:1000px;
+    padding:10px;
+    background-color: transparent;
+}
