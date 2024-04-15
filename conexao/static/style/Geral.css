@@ -101,14 +101,16 @@ main{
 }
 .textoscard{
     display: flex;
+    width:87%;
     justify-content: space-between;
     align-items: center;
 }
 .cards{
-    gap: 50px;
+    gap: 30px;
     display: flex;
     height: 250px;
-    justify-content: space-around;
+    width:100%;
+    justify-content: left;
     align-items: center;
 }
 .card-geral{
