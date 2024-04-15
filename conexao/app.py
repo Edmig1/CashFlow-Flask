@@ -7,6 +7,7 @@ from flask import session
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'sua_chave_secreta_aqui'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/cashflow'
+app.config['SECRET_KEY'] = 'chave'
 db = SQLAlchemy(app)
 
 class Receitas(db.Model):
@@ -100,6 +101,26 @@ def criar_user():
         db.session.commit()
         flash('Usuário cadastrado com sucesso', 'success')
         return redirect(url_for('novo_user'))
+@app.route('/cadastrolista')
+def cadastrolista():
+    return render_template('CadastroListagem.html')
+
+@app.route('/cadastro')
+def cadastro():
+    return render_template('Cadastro.html')
+@app.route('/criar_user', methods=['POST'])
+def criar_user():
+    nome = request.form['nome']
+    email = request.form['email']
+    senha = request.form['senha']
+
+    user = Usuario.query.filter_by(email=email).first()
+    senha_hash = generate_password_hash(senha).decode('utf-8')
+    novo_usuario = Usuario(nome=nome, email=email, senha=senha_hash)
+    db.session.add(novo_usuario)
+    db.session.commit()
+    flash('Usuário cadastrado com sucesso', 'success')
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)
