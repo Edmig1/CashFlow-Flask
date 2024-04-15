@@ -16,15 +16,27 @@
             <div>
                 <h1>CRIE SUA CONTA</h1>
             </div>
+            <div class="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
             <div>
-                <form action="{{ url_for('criar_user') }}" method="post" class="form">
-                    <input class="inp" type="text" name="nome" placeholder="Nome">
-                    <input class="inp" type="text" name="email" placeholder="Email">
-                    <input class="inp" type="password" name="senha" placeholder="Senha">
-                    <button type="submit" class="btn1">Criar</button>
+                <form action="{{ url_for('criar_user') }}" class="form" method="post">
+                    <input class="inp" type="text" name="nome" placeholder="Nome" required>
+                    <input class="inp" type="text" name="email" placeholder="Email" required>
+                    <input class="inp" type="password" name="senha" placeholder="Senha" required>
+                    <button class="btn1">Criar</button>
                 </form>
             </div>
             <div style="display: flex; gap: 20px; flex-direction: column;">
+
                 <button class="noAccount">Já tenho uma conta</button>
             </div>
         </div>
