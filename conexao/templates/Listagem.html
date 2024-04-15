@@ -49,11 +49,11 @@
         <h1>Balanço de economias</h1>
         <div class="d-flex justify-content-center align-items-center flex-column tabelaGrid">
             <div class="switchCase rounded-pill">
-                <button class="switch p-2">Economias</button>
-                <button class="switch p-2">Tudo</button>
-                <button class="switch p-2">Despesas</button>
+                <button class="switch p-2" onclick="alterarTabela(this)">Economias</button>
+                <button class="switch p-2" onclick="alterarTabela(this)">Tudo</button>
+                <button class="switch p-2" onclick="alterarTabela(this)">Despesas</button>
             </div>
-            <div class="tabela m-3 p-4 rounded-4" id="Tudo">
+            <div class="tabela m-3 p-4 rounded-4" id="Tudo" style="display: block;">
                 <div class="linha">
                     <p class="coluna">Desc</p>
                     <p class="coluna">Valor</p>
@@ -72,7 +72,7 @@
                     <hr>
                 {% endfor %}
             </div>
-            <div class="tabela m-3 p-4 rounded-4" id="Economias">
+            <div class="tabela m-3 p-4 rounded-4" id="Economias" style="display: none;">
                 <div class="linha">
                     <p class="coluna">Desc</p>
                     <p class="coluna">Valor</p>
@@ -91,7 +91,7 @@
                     <hr>
                 {% endfor %}
             </div>
-            <div class="tabela m-3 p-4 rounded-4" id="Despesas">
+            <div class="tabela m-3 p-4 rounded-4" id="Despesas" style="display: none;">
                 <div class="linha">
                     <p class="coluna">Desc</p>
                     <p class="coluna">Valor</p>
