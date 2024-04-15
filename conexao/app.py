@@ -7,6 +7,10 @@ app = Flask(__name__)
 def entrar():
     return render_template('Entrar.html')
 
+@app.route('/')
+def entrar():
+    return render_template('Login.html')
+
 @app.route('/geral')
 def geral():
     return render_template('Geral.html')
