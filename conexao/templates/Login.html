@@ -16,15 +16,26 @@
             <div>
                 <h1>ENTRE NA SUA CONTA</h1>
             </div>
+            <div class="messages">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
             <div>
-                <form action="" class="form">
-                    <input class="inp" type="text" placeholder="Email">
-                    <input class="inp" type="text" placeholder="Senha">
+                <form action="{{ url_for('login_post') }}" class="form" method="post">
+                    <input class="inp" type="text" name="email" placeholder="Email" required>
+                    <input class="inp" type="password" name="senha" placeholder="Senha" required>
+                    <button class="btn1" type="submit">Entrar</button>
                 </form>
             </div>
             <div style="display: flex; gap: 20px; flex-direction: column;">
-                <button class="btn1">Entrar</button>
-                <button class="noAccount">Não tenho uma conta</button>
+                <a href="{{ url_for('novo_user') }}"><button class="noAccount">Não tenho uma conta</button></a>
             </div>
         </div>
         <div>
@@ -32,5 +43,4 @@
         </div>
     </div>
 </body>
-
 </html>
