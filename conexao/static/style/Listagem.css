@@ -110,3 +110,10 @@ hr{
 .coluna{
     text-align: center;
 }
+}
+.btnlogout{
+    border:none;
+    border-radius:1000px;
+    padding:10px;
+    background-color: transparent;
+}
