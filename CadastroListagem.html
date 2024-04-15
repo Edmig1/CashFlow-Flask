@@ -45,29 +45,29 @@
             <p>Configurações</p>
         </div>
     </div>
-    <div class="container">
+    <div class="container" >
         <div class="titulo" style="color: white;">
             <h1>Cadastro</h1>
         </div>
-        <div class="formulario" style="color: white;">
+        <div class="formulario" style="color: black; background-color: white; justify-content: center; align-items: center;">
             <form>
                 <div>
-                    <div>
+                    <div class="input">
                         <label for="valor">Valor:</label>
                         <input type="number" id="valor" placeholder="Valor:" >
                     </div>
                     <br />
-                    <div>
+                    <div class="input">
                         <label for="desc">Descrição:</label>
                         <input type="text" id="desc" placeholder="Descrição:" >
                     </div>
                     <br />
-                    <div>
+                    <div class="input">
                         <label for="data">Data:</label>
                         <input type="date" id="data">
                     </div>
                     <br />
-                    <div>
+                    <div class="input">
                         <label for="categoria">Categoria:</label>
                         <input id="categoria" placeholder="Categoria" list="combobox">
                         <datalist id="combobox">
@@ -78,7 +78,7 @@
                     <br />
 
                 </div>
-                <div>
+                <div style="display: flex; justify-content: center;">
                     <button id="btn" style="border-radius: 10px; width: 50%;">Cadastrar</button>
                 </div>
             </form>
