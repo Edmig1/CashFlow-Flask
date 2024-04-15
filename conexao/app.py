@@ -1,34 +1,31 @@
 from flask import Flask,render_template,request,flash,redirect,url_for, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import generate_password_hash
-from flask_bcrypt import check_password_hash
 from flask import session
-from sqlalchemy import select, union_all
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'sua_chave_secreta_aqui'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/cashflow'
 app.config['SECRET_KEY'] = 'chave'
 db = SQLAlchemy(app)
-
-class Receitas(db.Model):
-    id_receita = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    data = db.Column(db.Date)
-    valor = db.Column(db.Integer)
-    descricao = db.Column(db.String(150))
-  #  id_usuario(db.Column(db.foreng_key (Usuario.id_usuario))
-
-class Despesas(db.Model):
-    id_despesa = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    data = db.Column(db.Date)
-    valor = db.Column(db.Integer)
-    descricao = db.Column(db.String(150))
 
 class Usuario(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nome = db.Column(db.String(50))
     email = db.Column(db.String(100))
     senha = db.Column(db.String(50))
+
+class Receitas(db.Model):
+    id_receita = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    data = db.Column(db.Date)
+    valor = db.Column(db.Integer)
+    descricao = db.Column(db.String(150))
+    id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+
+class Despesas(db.Model):
+    id_despesa = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    data = db.Column(db.Date)
+    valor = db.Column(db.Integer)
+    descricao = db.Column(db.String(150))
+    id_usuario = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
 @app.route('/')
 def entrar():
@@ -46,9 +43,10 @@ def geral():
 @app.route('/listagem')
 def listagem():
     # Crie as seleções SQL para cada consulta
-    selecao_despesas = Despesas.query.all()
-    selecao_receitas = Receitas.query.all()
+    selecao_despesas = Despesas.query.filter_by(id_usuario=session['id']).all()
+    selecao_receitas = Receitas.query.filter_by(id_usuario=session['id']).all()
     dados = []
+
     for receita in selecao_receitas:
         dados.append(receita)
 
@@ -122,14 +120,14 @@ def cadastro_despesa():
     categoria = request.form['categoria']
     if categoria== 'Despesa':
         despesa = Despesas.query.filter_by(descricao=descricao).first()
-        nova_despesa = Despesas(data=data, valor=valor, descricao=descricao)
+        nova_despesa = Despesas(data=data, valor=valor, descricao=descricao, id_usuario=session['id'])
         db.session.add(nova_despesa)
         db.session.commit()
         flash('Usuário cadastrado com sucesso', 'success')
         return redirect(url_for('cadastrolista'))
     else:
         receita = Receitas.query.filter_by(descricao=descricao).first()
-        nova_receita = Receitas(data=data, valor=valor, descricao=descricao)
+        nova_receita = Receitas(data=data, valor=valor, descricao=descricao, id_usuario=session['id'])
         db.session.add(nova_receita)
         db.session.commit()
         flash('Usuário cadastrado com sucesso', 'success')
