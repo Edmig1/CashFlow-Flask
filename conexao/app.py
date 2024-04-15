@@ -106,6 +106,7 @@ def criar_user():
         db.session.commit()
         flash('Usuário cadastrado com sucesso', 'success')
         return redirect(url_for('novo_user'))
+
 @app.route('/cadastrolista')
 def cadastrolista():
     return render_template('CadastroListagem.html')
