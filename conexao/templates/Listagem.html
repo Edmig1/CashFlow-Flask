@@ -49,11 +49,49 @@
         <h1>Balanço de economias</h1>
         <div class="d-flex justify-content-center align-items-center flex-column tabelaGrid">
             <div class="switchCase rounded-pill">
-                <button class="switch p-2" style="background-color: #DDBF29;">Economias</button>
-                <button class="switch p-2">Tudo</button>
-                <button class="switch p-2">Despesas</button>
+                <button class="switch p-2" onclick="alterarTabela(this)">Economias</button>
+                <button class="switch p-2" onclick="alterarTabela(this)">Tudo</button>
+                <button class="switch p-2" onclick="alterarTabela(this)">Despesas</button>
             </div>
-            <div class="tabela m-3 p-4 rounded-4">
+            <div class="tabela m-3 p-4 rounded-4" id="Tudo" style="display: block;">
+                <div class="linha">
+                    <p class="coluna">Desc</p>
+                    <p class="coluna">Valor</p>
+                    <p class="coluna">Data</p>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <button class="addBtn rounded-pill px-2 m-3">Adicionar</button>
+                </div>
+                {% for item in receitas %}
+                    <div class="linha">
+                        <p class="coluna">{{item['descricao']}}</p>
+                        <p class="coluna">{{item['valor']}}</p>
+                        <p class="coluna">{{item['data']}}</p>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+            <div class="tabela m-3 p-4 rounded-4" id="Economias" style="display: none;">
+                <div class="linha">
+                    <p class="coluna">Desc</p>
+                    <p class="coluna">Valor</p>
+                    <p class="coluna">Data</p>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <button class="addBtn rounded-pill px-2 m-3">Adicionar</button>
+                </div>
+                {% for item in tudo %}
+                    <div class="linha">
+                        <p class="coluna">{{item['descricao']}}</p>
+                        <p class="coluna">{{item['valor']}}</p>
+                        <p class="coluna">{{item['data']}}</p>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+            <div class="tabela m-3 p-4 rounded-4" id="Despesas" style="display: none;">
                 <div class="linha">
                     <p class="coluna">Desc</p>
                     <p class="coluna">Valor</p>
@@ -74,5 +112,13 @@
             </div>
         </div>
     </div>
+    <script>
+        let selected = 'Tudo'
+        async function alterarTabela(element){
+            document.getElementById(selected).style.display = 'none'
+            selected = element.innerHTML
+            document.getElementById(selected).style.display = 'block'
+        }
+    </script>
 </body>
 </html>
