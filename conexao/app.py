@@ -32,16 +32,14 @@ class Usuario(db.Model):
 
 @app.route('/')
 def entrar():
+    return render_template('Entrar.html')
+
+@app.route('/geral')
+def geral():
     if 'id' in session:
         return render_template('Geral.html')
     else:
         return redirect(url_for('login_form'))
-
-
-@app.route('/geral')
-def geral():
-    return render_template('Geral.html')
-
 
 @app.route('/listagem')
 def listagem():
@@ -78,7 +76,7 @@ def login_post():
         if 'next' in session:
             next_route = session.pop('next')
             return redirect(url_for(next_route))
-        return redirect(url_for('entrar'))
+        return redirect(url_for('geral'))
     else:
         flash(f'Nome ou senha incorretos', 'error')
         return redirect(url_for('login_form'))
