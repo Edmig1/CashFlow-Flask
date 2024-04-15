@@ -87,6 +87,8 @@
 .tabela{
     background-color: #262626;
     width: 50vw;
+    height: 70vh;
+    overflow: auto;
 }
 
 .addBtn{
@@ -98,4 +100,13 @@
 hr{
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.linha{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.coluna{
+    text-align: center;
 }

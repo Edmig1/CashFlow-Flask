@@ -1,7 +1,21 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/cashflow'
+db = SQLAlchemy(app)
 
+class Receitas(db.Model):
+    id_receita = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    data = db.Column(db.Date)
+    valor = db.Column(db.Integer)
+    descricao = db.Column(db.String(150))
+
+class Despesas(db.Model):
+    id_despesa = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    data = db.Column(db.Date)
+    valor = db.Column(db.Integer)
+    descricao = db.Column(db.String(150))
 
 @app.route('/')
 def entrar():
@@ -17,7 +31,11 @@ def geral():
 
 @app.route('/listagem')
 def listagem():
-    return render_template('Listagem.html')
+
+    ListaDespesas = Despesas.query.all()
+    ListaReceitas = Receitas.query.all()
+
+    return render_template('Listagem.html', despesas=ListaDespesas, receitas=ListaReceitas)
 
 @app.route('/config')
 def config():
