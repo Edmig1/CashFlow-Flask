@@ -53,5 +53,26 @@ def config():
 def cadastrolista():
     return render_template('CadastroListagem.html')
 
+@app.route('/cadastro_despesa', methods=['POST'])
+def cadastro_despesa():
+    data = request.form['data']
+    valor = request.form['valor']
+    descricao = request.form['descricao']
+    categoria = request.form['categoria']
+    if categoria== 'Despesa':
+        despesa = Despesas.query.filter_by(descricao=descricao).first()
+        nova_despesa = Despesas(data=data, valor=valor, descricao=descricao)
+        db.session.add(nova_despesa)
+        db.session.commit()
+        flash('Usuário cadastrado com sucesso', 'success')
+        return redirect(url_for('cadastrolista'))
+    else:
+        receita = Receitas.query.filter_by(descricao=descricao).first()
+        nova_receita = Receitas(data=data, valor=valor, descricao=descricao)
+        db.session.add(nova_receita)
+        db.session.commit()
+        flash('Usuário cadastrado com sucesso', 'success')
+        return redirect(url_for('cadastrolista'))
+
 if __name__ == '__main__':
     app.run(debug=True)
