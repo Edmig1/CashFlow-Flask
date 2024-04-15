@@ -17,14 +17,14 @@
                 <h1>CRIE SUA CONTA</h1>
             </div>
             <div>
-                <form action="" class="form">
-                    <input class="inp" type="text" placeholder="Nome">
-                    <input class="inp" type="text" placeholder="Email">
-                    <input class="inp" type="password" placeholder="Senha">
+                <form action="{{ url_for('criar_user') }}" method="post" class="form">
+                    <input class="inp" type="text" name="nome" placeholder="Nome">
+                    <input class="inp" type="text" name="email" placeholder="Email">
+                    <input class="inp" type="password" name="senha" placeholder="Senha">
+                    <button type="submit" class="btn1">Criar</button>
                 </form>
             </div>
             <div style="display: flex; gap: 20px; flex-direction: column;">
-                <button class="btn1">Criar</button>
                 <button class="noAccount">Já tenho uma conta</button>
             </div>
         </div>
