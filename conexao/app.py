@@ -50,6 +50,14 @@ def geral():
 
 @app.route('/listagem')
 def listagem():
+    soma = 0
+    despesas = Despesas.query.with_entities(Receitas).filter_by(id_usuario=session['id']).all()
+    receitas = Receitas.query.with_entities(Despesas).filter_by(id_usuario=session['id']).all()
+    for receita in receitas:
+        soma -= receita.valor
+    for despesa in despesas:
+        soma += despesa.valor
+    porcentagem = round((soma / 3400) * 100)
     # Crie as seleções SQL para cada consulta
     selecao_despesas = Despesas.query.filter_by(id_usuario=session['id']).all()
     selecao_receitas = Receitas.query.filter_by(id_usuario=session['id']).all()
@@ -61,7 +69,7 @@ def listagem():
     for despesa in selecao_despesas:
         dados.append(despesa)
 
-    return render_template('Listagem.html', despesas=selecao_despesas, receitas=selecao_receitas, tudo=dados)
+    return render_template('Listagem.html', despesas=selecao_despesas, receitas=selecao_receitas, tudo=dados, soma=soma, porcentagem=porcentagem)
 
 @app.route('/config')
 def config():
@@ -119,7 +127,15 @@ def criar_user():
 
 @app.route('/cadastrolista')
 def cadastrolista():
-    return render_template('CadastroListagem.html')
+    soma = 0
+    despesas = Despesas.query.with_entities(Receitas).filter_by(id_usuario=session['id']).all()
+    receitas = Receitas.query.with_entities(Despesas).filter_by(id_usuario=session['id']).all()
+    for receita in receitas:
+        soma -= receita.valor
+    for despesa in despesas:
+        soma += despesa.valor
+    porcentagem = round((soma / 3400) * 100)
+    return render_template('CadastroListagem.html', soma=soma, porcentagem=porcentagem)
 
 @app.route('/cadastro_despesa', methods=['POST'])
 def cadastro_despesa():
