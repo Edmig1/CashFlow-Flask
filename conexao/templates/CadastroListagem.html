@@ -57,26 +57,26 @@
         </div>
         <div class="formulario"
             style="color: black; background-color: white; justify-content: center; align-items: center;">
-            <form>
+            <form action="{{url_for('cadastro_despesa')}}" method="post">
                 <div>
                     <div class="input">
                         <label for="valor">Valor:</label>
-                        <input type="number" id="valor" placeholder="Valor:">
+                        <input type="number" id="valor" placeholder="Valor:" name="valor">
                     </div>
                     <br />
                     <div class="input">
                         <label for="desc">Descrição:</label>
-                        <input type="text" id="desc" placeholder="Descrição:">
+                        <input type="text" id="desc" placeholder="Descrição:" name="descricao">
                     </div>
                     <br />
                     <div class="input">
                         <label for="data">Data:</label>
-                        <input type="date" id="data">
+                        <input type="date" id="data" name="data">
                     </div>
                     <br />
                     <div class="input">
                         <label for="categoria">Categoria:</label>
-                        <input id="categoria" placeholder="Categoria" list="combobox">
+                        <input id="categoria" placeholder="Categoria" list="combobox" name="categoria" autocomplete="off">
                         <datalist id="combobox">
                             <option value="Receita">
                             <option value="Despesa">
