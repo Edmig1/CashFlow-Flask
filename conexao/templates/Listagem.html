@@ -63,9 +63,9 @@
                 </div>
                 <hr>
                 <div class="d-flex justify-content-center">
-                    <button class="addBtn rounded-pill px-2 m-3">Adicionar</button>
+                    <a class="addBtn rounded-pill px-2 m-3" href="/cadastrolista">Adicionar</a>
                 </div>
-                {% for item in receitas %}
+                {% for item in tudo %}
                     <div class="linha">
                         <p class="coluna">{{item['descricao']}}</p>
                         <p class="coluna">{{item['valor']}}</p>
@@ -82,9 +82,9 @@
                 </div>
                 <hr>
                 <div class="d-flex justify-content-center">
-                    <button class="addBtn rounded-pill px-2 m-3">Adicionar</button>
+                    <a class="addBtn rounded-pill px-2 m-3" href="/cadastrolista">Adicionar</a>
                 </div>
-                {% for item in tudo %}
+                {% for item in receitas %}
                     <div class="linha">
                         <p class="coluna">{{item['descricao']}}</p>
                         <p class="coluna">{{item['valor']}}</p>
@@ -101,7 +101,7 @@
                 </div>
                 <hr>
                 <div class="d-flex justify-content-center">
-                    <button class="addBtn rounded-pill px-2 m-3">Adicionar</button>
+                    <a class="addBtn rounded-pill px-2 m-3" href="/cadastrolista">Adicionar</a>
                 </div>
                 {% for item in despesas %}
                     <div class="linha">

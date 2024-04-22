@@ -89,6 +89,7 @@
 }
 
 .switch{
+    text-decoration: none;
     background: none;
     border: none;
     color: black;
@@ -130,4 +131,8 @@ a{
     border-radius:1000px;
     padding:10px;
     background-color: transparent;
+}
+
+.switch:active{
+    text-decoration: underline;
 }
