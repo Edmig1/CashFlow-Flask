@@ -27,28 +27,28 @@
                 </div>
                 <div class="divsino">
                     <form action="{{ url_for('logout') }}" method="post">
-                        <button class="btnlogout" type="submit">
+                        <button style="border:none; border-radius:1000px; padding:10px; background-color: transparent;" class="btnlogout" type="submit">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         </button>
                     </form>
                 </div>
             </div>
             <div class="dinheiro">
-                <p>R$1000</p>
+                <p>R${{soma}}</p>
             </div>
         </div>
         <div class="menu">
             <i class="fa-solid fa-list"></i>
-            <p>Menu</p>
+            <a href="/geral">Menu</a>
         </div>
         <div class="carteira">
             <i class="fa-solid fa-wallet"></i>
-            <p>Carteira</p>
-        </div>
+            <a href="/listagem">Listagem</a>
 
+        </div>
         <div class="config">
-            <i class="fa-solid fa-gear"></i>
-            <p>Configurações</p>
+            <i class="fa-solid fa-paper-plane"></i>
+            <a href="cadastrolista">Cadastro</a>
         </div>
     </div>
     <div class="container">

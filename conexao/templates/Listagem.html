@@ -13,12 +13,12 @@
     <title>Carteira</title>
 </head>
 <body class="total">
-    <div class="barralateral">
+   <div class="barralateral">
         <div class="divperfil">
             <div class="divnome">
                 <div>
-                    <img class="maurilo" src="/static/imgs/user.jpg" alt="">
-                <p>Carlos Carvalho Martins</p>
+                    <img class="maurilo" src="/static/imgs/derso.jpg" alt="">
+                <p>Ederson Sales</p>
                 </div>
                 <div class="divsino">
                     <form action="{{ url_for('logout') }}" method="post">
@@ -29,24 +29,22 @@
                 </div>
             </div>
             <div class="dinheiro">
-                <p>R$1000</p>
+                <p>R${{soma}}</p>
             </div>
         </div>
 
         <div class="menu">
             <i class="fa-solid fa-list"></i>
-            <p>Menu</p>
+            <a href="/geral">Menu</a>
         </div>
-
         <div class="carteira">
             <i class="fa-solid fa-wallet"></i>
-            <p>Carteira</p>
+            <a href="/listagem">Listagem</a>
 
         </div>
-
         <div class="config">
-            <i class="fa-solid fa-gear"></i>
-            <p>Configurações</p>
+            <i class="fa-solid fa-paper-plane"></i>
+            <a href="cadastrolista">Cadastro</a>
         </div>
     </div>
     <div class="main container-fluid p-5  d-flex justify-content-between align-items-center flex-column">

@@ -68,6 +68,16 @@
     gap: 20px;
 }
 
+.menu a,
+.carteira a,
+.config a {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
 .main{
     background-color: #3E3E3E;
 }
@@ -102,7 +112,11 @@ hr{
     margin: 0 !important;
     padding: 0 !important;
 }
-
+a{
+    margin: 0 !important;
+    text-decoration: none !important;
+    color:#fff !important;
+}
 .linha{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
