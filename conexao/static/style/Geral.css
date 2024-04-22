@@ -69,6 +69,17 @@
     padding-left: 15px;
     gap: 20px;
 }
+
+.menu a,
+.carteira a,
+.config a {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
 .menu p, .carteira p,.config p{
     margin: 0;
 }
