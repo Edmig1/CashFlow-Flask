@@ -35,6 +35,7 @@ def entrar():
 #Não mexe nessa rota pelo amor de Deus
 def geral():
     if 'id' in session:
+        nome = Usuario.query.filter_by(id=session['id'])
         soma = 0
         selecao_despesas = Despesas.query.with_entities(Receitas).filter_by(id_usuario=session['id']).all()
         selecao_receitas = Receitas.query.with_entities(Despesas).filter_by(id_usuario=session['id']).all()
@@ -44,7 +45,7 @@ def geral():
             soma+= despesa.valor
         porcentagem = round((soma/3400)*100)
 
-        return render_template('Geral.html', soma=soma, porcentagem=porcentagem)
+        return render_template('Geral.html', soma=soma, porcentagem=porcentagem,nome=nome)
     else:
         return redirect(url_for('login_form'))
 

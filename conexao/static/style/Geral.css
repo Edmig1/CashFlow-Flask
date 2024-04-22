@@ -138,3 +138,10 @@ main{
     padding:10px;
     background-color: transparent;
 }
+.nome{
+    margin:0;
+}
+#perfil{
+scale:2;
+padding:0px 10px;
+}
