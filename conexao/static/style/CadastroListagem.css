@@ -4,6 +4,15 @@
     font-family: "Quicksand", sans-serif;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
 .total {
     display: flex;
     flex-direction: row;
@@ -79,6 +88,15 @@
     gap: 20px;
 }
 
+.menu a,
+.carteira a,
+.config a {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .menu p,
 .carteira p,
 .config p {
@@ -89,13 +107,13 @@
 .btnCadastro {
     border: none;
     outline: none;
-    background-color: #ffffff;
+    background-color: rgb(213, 213, 2);
     padding: 10px 20px;
     font-size: 12px;
     font-weight: 700;
     color: black;
     transition: all ease 0.1s;
-    box-shadow: 0px 5px 0px 0px black;
+    box-shadow: 0px 7px 0px 0px black;
 }
 
 button:active {
@@ -107,11 +125,12 @@ button:active {
 
 input {
     border-radius: 8px;
-    width: 35%;
+    width: 90%;
     border: 3px black solid;
     background-color: white;
     color: black;
-} 
+    justify-content: flex-end;
+}
 
 
 input::placeholder{
@@ -123,4 +142,18 @@ input::placeholder{
     border-radius:1000px;
     padding:10px;
     background-color: transparent;
+    color: blak;
+}
+
+
+.formulario{
+    padding: 20px;
+    border-radius: 20px;
+    width: 50%;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
